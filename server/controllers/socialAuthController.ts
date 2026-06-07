@@ -4,7 +4,7 @@ import { Request,Response } from "express";
 import zernio from "../config/zernio.js";
 import { User } from "../models/User.js";
 import { Account } from "../models/Account.js";
-import { create } from "node:domain";
+import { AuthRequest } from "../middlewares/authMiddleware.js";
 
 //helper to esure user has a Zernio Profile.
 const getOrCreateZernioProfile = async (user: any): Promise<string> => {
@@ -42,7 +42,7 @@ try{
 // GET /api/auth/:platform
 
 export const generateAuthUrl = async (
-  req: Request,
+  req: AuthRequest,
   res: Response
 ): Promise<void> => {
   try {
@@ -88,7 +88,7 @@ export const generateAuthUrl = async (
 // GET /api/auth/sync
 
 export const syncAccounts = async (
-  req: Request,
+  req: AuthRequest,
   res: Response
 ): Promise<void> => {
   try {
