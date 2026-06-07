@@ -38,4 +38,4 @@ export const protect = async (
             message: "Not authorized, no token",
         });
     }
-};
+}
