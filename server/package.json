@@ -14,7 +14,9 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@google/genai": "^2.8.0",
     "@zernio/node": "^0.2.224",
+    "axios": "^1.17.0",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
